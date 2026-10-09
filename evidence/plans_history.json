@@ -1,0 +1,458 @@
+[
+  {
+    "version": 1,
+    "scenario_id": "INITIAL",
+    "selections": {
+      "Life Support": "L1",
+      "Medical": "M1",
+      "Food Production": "F1",
+      "Engineering": "E1"
+    },
+    "commitments": [],
+    "status": "REJECTED",
+    "created_round": 1,
+    "totals": {
+      "power": 112,
+      "water": 62,
+      "oxygen": 74,
+      "robot": 33,
+      "bandwidth": 26
+    },
+    "risk": 4,
+    "sacrifices": [],
+    "validation": {
+      "passed": false,
+      "plan_version": 1,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L1, Medical=M1, Food Production=F1, Engineering=E1)"
+        },
+        {
+          "name": "Resources",
+          "passed": false,
+          "reason": "Pool exceeded: power over by 33 (112/79), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 4/24, sacrifices 0/1 (none)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "No sacrifice mode active; no return required"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ],
+      "totals": {
+        "power": 112,
+        "water": 62,
+        "oxygen": 74,
+        "robot": 33,
+        "bandwidth": 26
+      },
+      "risk": 4,
+      "sacrifices": []
+    },
+    "note": "round 1 proposals"
+  },
+  {
+    "version": 2,
+    "scenario_id": "INITIAL",
+    "selections": {
+      "Life Support": "L2",
+      "Medical": "M2",
+      "Food Production": "F2",
+      "Engineering": "E2"
+    },
+    "commitments": [],
+    "status": "REJECTED",
+    "created_round": 2,
+    "totals": {
+      "power": 83,
+      "water": 51,
+      "oxygen": 60,
+      "robot": 30,
+      "bandwidth": 18
+    },
+    "risk": 20,
+    "sacrifices": [],
+    "validation": {
+      "passed": false,
+      "plan_version": 2,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L2, Medical=M2, Food Production=F2, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": false,
+          "reason": "Pool exceeded: power over by 4 (83/79), oxygen over by 1 (60/59), robot over by 4 (30/26), bandwidth over by 1 (18/17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 20/24, sacrifices 0/1 (none)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "No sacrifice mode active; no return required"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ],
+      "totals": {
+        "power": 83,
+        "water": 51,
+        "oxygen": 60,
+        "robot": 30,
+        "bandwidth": 18
+      },
+      "risk": 20,
+      "sacrifices": []
+    },
+    "note": "round 2 concessions"
+  },
+  {
+    "version": 3,
+    "scenario_id": "INITIAL",
+    "selections": {
+      "Life Support": "L3",
+      "Medical": "M2",
+      "Food Production": "F2",
+      "Engineering": "E2"
+    },
+    "commitments": [
+      {
+        "id": "cmt-d5be3028",
+        "owner": "Engineering",
+        "beneficiary": "Life Support",
+        "return_term": "Commit 4 Robot units to habitat inspection and seal work",
+        "status": "EXPIRED",
+        "offered_round": 3,
+        "accepted_round": 3,
+        "expiry": "next cycle",
+        "plan_version": 3
+      },
+      {
+        "id": "cmt-208964c1",
+        "owner": "Commander",
+        "beneficiary": "Life Support",
+        "return_term": "Give habitat restoration first priority next cycle",
+        "status": "EXPIRED",
+        "offered_round": 3,
+        "accepted_round": 3,
+        "expiry": "next cycle",
+        "plan_version": 3
+      }
+    ],
+    "status": "INVALID",
+    "created_round": 3,
+    "totals": {
+      "power": 79,
+      "water": 50,
+      "oxygen": 57,
+      "robot": 26,
+      "bandwidth": 17
+    },
+    "risk": 24,
+    "sacrifices": [
+      "Life Support"
+    ],
+    "validation": {
+      "passed": true,
+      "plan_version": 3,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L3, Medical=M2, Food Production=F2, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": true,
+          "reason": "Within pool (P79 / W50 / O57 / R26 / B17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 24/24, sacrifices 1/1 (Life Support)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "Fair return secured (Life Support<-2 accepted returns)"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "All four departments ACCEPT the current plan version v3"
+        }
+      ],
+      "totals": {
+        "power": 79,
+        "water": 50,
+        "oxygen": 57,
+        "robot": 26,
+        "bandwidth": 17
+      },
+      "risk": 24,
+      "sacrifices": [
+        "Life Support"
+      ]
+    },
+    "note": "round 3 feasible candidate"
+  },
+  {
+    "version": 4,
+    "scenario_id": "CRISIS_002",
+    "selections": {
+      "Life Support": "L1",
+      "Medical": "M1",
+      "Food Production": "F1",
+      "Engineering": "E1"
+    },
+    "commitments": [],
+    "status": "REJECTED",
+    "created_round": 1,
+    "totals": {
+      "power": 112,
+      "water": 62,
+      "oxygen": 74,
+      "robot": 33,
+      "bandwidth": 26
+    },
+    "risk": 4,
+    "sacrifices": [],
+    "validation": {
+      "passed": false,
+      "plan_version": 4,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L1, Medical=M1, Food Production=F1, Engineering=E1)"
+        },
+        {
+          "name": "Resources",
+          "passed": false,
+          "reason": "Pool exceeded: power over by 37 (112/75), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 4/28, sacrifices 0/2 (none)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "No sacrifice mode active; no return required"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ],
+      "totals": {
+        "power": 112,
+        "water": 62,
+        "oxygen": 74,
+        "robot": 33,
+        "bandwidth": 26
+      },
+      "risk": 4,
+      "sacrifices": []
+    },
+    "note": "round 1 proposals"
+  },
+  {
+    "version": 5,
+    "scenario_id": "CRISIS_002",
+    "selections": {
+      "Life Support": "L2",
+      "Medical": "M2",
+      "Food Production": "F2",
+      "Engineering": "E2"
+    },
+    "commitments": [],
+    "status": "REJECTED",
+    "created_round": 2,
+    "totals": {
+      "power": 83,
+      "water": 51,
+      "oxygen": 60,
+      "robot": 30,
+      "bandwidth": 18
+    },
+    "risk": 20,
+    "sacrifices": [],
+    "validation": {
+      "passed": false,
+      "plan_version": 5,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L2, Medical=M2, Food Production=F2, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": false,
+          "reason": "Pool exceeded: power over by 8 (83/75), oxygen over by 1 (60/59), robot over by 4 (30/26), bandwidth over by 1 (18/17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 20/28, sacrifices 0/2 (none)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "No sacrifice mode active; no return required"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ],
+      "totals": {
+        "power": 83,
+        "water": 51,
+        "oxygen": 60,
+        "robot": 30,
+        "bandwidth": 18
+      },
+      "risk": 20,
+      "sacrifices": []
+    },
+    "note": "round 2 concessions"
+  },
+  {
+    "version": 6,
+    "scenario_id": "CRISIS_002",
+    "selections": {
+      "Life Support": "L3",
+      "Medical": "M2",
+      "Food Production": "F3",
+      "Engineering": "E2"
+    },
+    "commitments": [
+      {
+        "id": "cmt-af470871",
+        "owner": "Engineering",
+        "beneficiary": "Life Support",
+        "return_term": "Commit 4 Robot units to habitat inspection and seal work",
+        "status": "ACCEPTED",
+        "offered_round": 3,
+        "accepted_round": 3,
+        "expiry": "next cycle",
+        "plan_version": 6
+      },
+      {
+        "id": "cmt-fa3ebf3a",
+        "owner": "Commander",
+        "beneficiary": "Life Support",
+        "return_term": "Give habitat restoration first priority next cycle",
+        "status": "ACCEPTED",
+        "offered_round": 3,
+        "accepted_round": 3,
+        "expiry": "next cycle",
+        "plan_version": 6
+      },
+      {
+        "id": "cmt-ff359af3",
+        "owner": "Engineering",
+        "beneficiary": "Food Production",
+        "return_term": "Commit 4 future Robot units to greenhouse rebuild",
+        "status": "ACCEPTED",
+        "offered_round": 3,
+        "accepted_round": 3,
+        "expiry": "next cycle",
+        "plan_version": 6
+      },
+      {
+        "id": "cmt-643c078a",
+        "owner": "Commander",
+        "beneficiary": "Food Production",
+        "return_term": "Protect the next Water increase for Food Production",
+        "status": "ACCEPTED",
+        "offered_round": 3,
+        "accepted_round": 3,
+        "expiry": "next cycle",
+        "plan_version": 6
+      }
+    ],
+    "status": "APPROVED",
+    "created_round": 3,
+    "totals": {
+      "power": 74,
+      "water": 47,
+      "oxygen": 57,
+      "robot": 24,
+      "bandwidth": 16
+    },
+    "risk": 28,
+    "sacrifices": [
+      "Life Support",
+      "Food Production"
+    ],
+    "validation": {
+      "passed": true,
+      "plan_version": 6,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L3, Medical=M2, Food Production=F3, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": true,
+          "reason": "Within pool (P74 / W47 / O57 / R24 / B16)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 28/28, sacrifices 2/2 (Life Support, Food Production)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "Fair return secured (Life Support<-2 accepted returns, Food Production<-2 accepted returns)"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "All four departments ACCEPT the current plan version v6"
+        }
+      ],
+      "totals": {
+        "power": 74,
+        "water": 47,
+        "oxygen": 57,
+        "robot": 24,
+        "bandwidth": 16
+      },
+      "risk": 28,
+      "sacrifices": [
+        "Life Support",
+        "Food Production"
+      ]
+    },
+    "note": "round 3 feasible candidate"
+  }
+]

@@ -1,0 +1,1635 @@
+[
+  {
+    "id": "msg-c81467cf",
+    "timestamp": 1791542790.2391033,
+    "scenario_id": "INITIAL",
+    "round": 0,
+    "plan_version": 0,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "CRISIS INITIAL: Council convened. Resources P:79 / W:52 / O:59 / R:26 / B:17. Risk limit 24, max sacrifice modes 1. Plan version v0. Each department must select one complete mode package; individual resource values are fixed.",
+    "payload": {
+      "resources": {
+        "power": 75,
+        "water": 52,
+        "oxygen": 59,
+        "robot": 26,
+        "bandwidth": 17
+      },
+      "risk_limit": 24,
+      "max_sacrifices": 1
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-9bfac6b2",
+    "timestamp": 1791542790.2393763,
+    "scenario_id": "INITIAL",
+    "round": 1,
+    "plan_version": 0,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Round 1: every department requests its preferred operating mode.",
+    "payload": {},
+    "engine": "system"
+  },
+  {
+    "id": "msg-3960c725",
+    "timestamp": 1791542790.2393968,
+    "scenario_id": "INITIAL",
+    "round": 1,
+    "plan_version": 0,
+    "sender": "Life Support",
+    "recipient": "Commander",
+    "type": "PROPOSAL",
+    "content": "I request L1 Standard mode (L1 Standard: P34/W10/O42/R4/B4, risk 1). My mission is to seal the habitat leak and stabilise the air supply, so I request the full package. My main concern is oxygen continuity and continuous power, and dropping to a lower mode would cost the living zone closes and the crew endures crowding and thermal limits for 48 hours. If forced lower I lose the living zone closes and the crew endures crowding and thermal limits for 48 hours.",
+    "payload": {
+      "mode_id": "L1",
+      "package": [
+        34,
+        10,
+        42,
+        4,
+        4,
+        1
+      ]
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-36ad1107",
+    "timestamp": 1791542790.2394147,
+    "scenario_id": "INITIAL",
+    "round": 1,
+    "plan_version": 0,
+    "sender": "Medical",
+    "recipient": "Commander",
+    "type": "PROPOSAL",
+    "content": "I request M1 Standard mode (M1 Standard: P28/W12/O18/R3/B10, risk 1). My mission is to stabilise and treat the six injured crew members, so I request the full package. My main concern is power, oxygen and bandwidth for life-critical care, and dropping to a lower mode would cost one surgery is delayed and a patient stays unstable. If forced lower I lose one surgery is delayed and a patient stays unstable.",
+    "payload": {
+      "mode_id": "M1",
+      "package": [
+        28,
+        12,
+        18,
+        3,
+        10,
+        1
+      ]
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-1006e808",
+    "timestamp": 1791542790.239426,
+    "scenario_id": "INITIAL",
+    "round": 1,
+    "plan_version": 0,
+    "sender": "Food Production",
+    "recipient": "Commander",
+    "type": "PROPOSAL",
+    "content": "I request F1 Standard mode (F1 Standard: P24/W34/O8/R4/B2, risk 1). My mission is to protect the crop cycle and the greenhouse cooling loop, so I request the full package. My main concern is water and power for the greenhouse, and dropping to a lower mode would cost a crop bay is abandoned and the food reserve falls by 40 percent. If forced lower I lose a crop bay is abandoned and the food reserve falls by 40 percent.",
+    "payload": {
+      "mode_id": "F1",
+      "package": [
+        24,
+        34,
+        8,
+        4,
+        2,
+        1
+      ]
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-beaf2d5d",
+    "timestamp": 1791542790.2394338,
+    "scenario_id": "INITIAL",
+    "round": 1,
+    "plan_version": 0,
+    "sender": "Engineering",
+    "recipient": "Commander",
+    "type": "PROPOSAL",
+    "content": "I request E1 Standard mode (E1 Standard: P26/W6/O6/R22/B10, risk 1). My mission is to repair power generation and critical systems, so I request the full package. My main concern is robot time and bandwidth for repairs, and dropping to a lower mode would cost the rover is cannibalised and future repair capacity is reduced. If forced lower I lose the rover is cannibalised and future repair capacity is reduced.",
+    "payload": {
+      "mode_id": "E1",
+      "package": [
+        26,
+        6,
+        6,
+        22,
+        10,
+        1
+      ]
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-08ad26c7",
+    "timestamp": 1791542790.2395027,
+    "scenario_id": "INITIAL",
+    "round": 1,
+    "plan_version": 1,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Draft plan v1: Life Support=L1, Medical=M1, Food Production=F1, Engineering=E1 | P112 / W62 / O74 / R33 / B26 | risk 4 | sacrifice: none. (round 1 proposals)",
+    "payload": {
+      "plan_version": 1,
+      "selections": {
+        "Life Support": "L1",
+        "Medical": "M1",
+        "Food Production": "F1",
+        "Engineering": "E1"
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-a958fb3d",
+    "timestamp": 1791542790.239539,
+    "scenario_id": "INITIAL",
+    "round": 1,
+    "plan_version": 1,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "OBJECTION",
+    "content": "Deterministic validator on plan v1: FAIL. Mode packages: PASS | Resources: FAIL | Risk & sacrifice: PASS | Return agreement: PASS | Votes: PASS. Resources: Pool exceeded: power over by 33 (112/79), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17)",
+    "payload": {
+      "plan_version": 1,
+      "passed": false,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L1, Medical=M1, Food Production=F1, Engineering=E1)"
+        },
+        {
+          "name": "Resources",
+          "passed": false,
+          "reason": "Pool exceeded: power over by 33 (112/79), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 4/24, sacrifices 0/1 (none)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "No sacrifice mode active; no return required"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ]
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-00d7acb8",
+    "timestamp": 1791542790.239545,
+    "scenario_id": "INITIAL",
+    "round": 2,
+    "plan_version": 1,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Round 2: the drafted plan is invalid. Departments must object with numbers and declare their maximum concession and sacrifice stance.",
+    "payload": {},
+    "engine": "system"
+  },
+  {
+    "id": "msg-bfe06500",
+    "timestamp": 1791542790.2395616,
+    "scenario_id": "INITIAL",
+    "round": 2,
+    "plan_version": 1,
+    "sender": "Life Support",
+    "recipient": "Commander",
+    "type": "COUNTEROFFER",
+    "content": "OBJECTION/COUNTEROFFER: I object: the plan fails because Resources: Pool exceeded: power over by 33 (112/79), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17). I refuse Sacrifice mode while 42 crew breathe through a leaking habitat without a guaranteed return. I can accept L2 Restricted (L2 Restricted: P27/W9/O36/R6/B3, risk 5) as my concession, but I will not take Sacrifice mode.",
+    "payload": {
+      "mode_id": "L2",
+      "refused_sacrifice": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-00b367cf",
+    "timestamp": 1791542790.2395744,
+    "scenario_id": "INITIAL",
+    "round": 2,
+    "plan_version": 1,
+    "sender": "Medical",
+    "recipient": "Commander",
+    "type": "COUNTEROFFER",
+    "content": "OBJECTION/COUNTEROFFER: I object: the plan fails because Resources: Pool exceeded: power over by 33 (112/79), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17). I refuse Sacrifice mode; delaying surgery puts a critical patient at risk without compensation. I can accept M2 Restricted (M2 Restricted: P21/W10/O14/R2/B6, risk 5) as my concession, but I will not take Sacrifice mode.",
+    "payload": {
+      "mode_id": "M2",
+      "refused_sacrifice": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-2e28f380",
+    "timestamp": 1791542790.239584,
+    "scenario_id": "INITIAL",
+    "round": 2,
+    "plan_version": 1,
+    "sender": "Food Production",
+    "recipient": "Commander",
+    "type": "COUNTEROFFER",
+    "content": "OBJECTION/COUNTEROFFER: I object: the plan fails because Resources: Pool exceeded: power over by 33 (112/79), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17). I refuse Sacrifice mode; abandoning a crop bay endangers the colony's long-term food supply. I can accept F2 Restricted (F2 Restricted: P15/W27/O5/R4/B2, risk 5) as my concession, but I will not take Sacrifice mode.",
+    "payload": {
+      "mode_id": "F2",
+      "refused_sacrifice": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-c34a0731",
+    "timestamp": 1791542790.2395916,
+    "scenario_id": "INITIAL",
+    "round": 2,
+    "plan_version": 1,
+    "sender": "Engineering",
+    "recipient": "Commander",
+    "type": "COUNTEROFFER",
+    "content": "OBJECTION/COUNTEROFFER: I object: the plan fails because Resources: Pool exceeded: power over by 33 (112/79), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17). I refuse Sacrifice mode; without the rover we cannot repair the solar field in time. I can accept E2 Restricted (E2 Restricted: P20/W5/O5/R18/B7, risk 5) as my concession, but I will not take Sacrifice mode.",
+    "payload": {
+      "mode_id": "E2",
+      "refused_sacrifice": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-30658368",
+    "timestamp": 1791542790.2396371,
+    "scenario_id": "INITIAL",
+    "round": 2,
+    "plan_version": 2,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Draft plan v2: Life Support=L2, Medical=M2, Food Production=F2, Engineering=E2 | P83 / W51 / O60 / R30 / B18 | risk 20 | sacrifice: none. (round 2 concessions)",
+    "payload": {
+      "plan_version": 2,
+      "selections": {
+        "Life Support": "L2",
+        "Medical": "M2",
+        "Food Production": "F2",
+        "Engineering": "E2"
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-ca2dcf39",
+    "timestamp": 1791542790.2396507,
+    "scenario_id": "INITIAL",
+    "round": 2,
+    "plan_version": 2,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "OBJECTION",
+    "content": "Deterministic validator on plan v2: FAIL. Mode packages: PASS | Resources: FAIL | Risk & sacrifice: PASS | Return agreement: PASS | Votes: PASS. Resources: Pool exceeded: power over by 4 (83/79), oxygen over by 1 (60/59), robot over by 4 (30/26), bandwidth over by 1 (18/17)",
+    "payload": {
+      "plan_version": 2,
+      "passed": false,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L2, Medical=M2, Food Production=F2, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": false,
+          "reason": "Pool exceeded: power over by 4 (83/79), oxygen over by 1 (60/59), robot over by 4 (30/26), bandwidth over by 1 (18/17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 20/24, sacrifices 0/1 (none)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "No sacrifice mode active; no return required"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ]
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-c86cf11b",
+    "timestamp": 1791542790.2396677,
+    "scenario_id": "INITIAL",
+    "round": 3,
+    "plan_version": 2,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Round 3: the Commander adopts the deterministically feasible candidate and opens return negotiations. Candidate: Life Support=L3, Medical=M2, Food Production=F2, Engineering=E2 | P79 / W50 / O57 / R26 / B17 | risk 24 | sacrifice: Life Support",
+    "payload": {
+      "candidate": {
+        "selections": {
+          "Life Support": "L3",
+          "Medical": "M2",
+          "Food Production": "F2",
+          "Engineering": "E2"
+        },
+        "totals": {
+          "power": 79,
+          "water": 50,
+          "oxygen": 57,
+          "robot": 26,
+          "bandwidth": 17
+        },
+        "risk": 24,
+        "sacrifices": [
+          "Life Support"
+        ]
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-cd922896",
+    "timestamp": 1791542790.2397087,
+    "scenario_id": "INITIAL",
+    "round": 3,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Draft plan v3: Life Support=L3, Medical=M2, Food Production=F2, Engineering=E2 | P79 / W50 / O57 / R26 / B17 | risk 24 | sacrifice: Life Support. (round 3 feasible candidate)",
+    "payload": {
+      "plan_version": 3,
+      "selections": {
+        "Life Support": "L3",
+        "Medical": "M2",
+        "Food Production": "F2",
+        "Engineering": "E2"
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-c6fc4c22",
+    "timestamp": 1791542790.2397213,
+    "scenario_id": "INITIAL",
+    "round": 3,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "OBJECTION",
+    "content": "Deterministic validator on plan v3: FAIL. Mode packages: PASS | Resources: PASS | Risk & sacrifice: PASS | Return agreement: FAIL | Votes: PASS. Return agreement: Life Support has 0 accepted commitment(s) from different agents; needs 2",
+    "payload": {
+      "plan_version": 3,
+      "passed": false,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L3, Medical=M2, Food Production=F2, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": true,
+          "reason": "Within pool (P79 / W50 / O57 / R26 / B17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 24/24, sacrifices 1/1 (Life Support)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": false,
+          "reason": "Life Support has 0 accepted commitment(s) from different agents; needs 2"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ]
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-379d73f8",
+    "timestamp": 1791542790.2397535,
+    "scenario_id": "INITIAL",
+    "round": 3,
+    "plan_version": 3,
+    "sender": "Engineering",
+    "recipient": "Commander",
+    "type": "COMMITMENT",
+    "content": "COMMITMENT: I promise Life Support: Commit 4 Robot units to habitat inspection and seal work.",
+    "payload": {
+      "commitment": {
+        "id": "cmt-d5be3028",
+        "owner": "Engineering",
+        "beneficiary": "Life Support",
+        "return_term": "Commit 4 Robot units to habitat inspection and seal work",
+        "status": "OFFERED",
+        "offered_round": 3,
+        "accepted_round": null,
+        "expiry": "next cycle",
+        "plan_version": 3
+      }
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-59d047fd",
+    "timestamp": 1791542790.239776,
+    "scenario_id": "INITIAL",
+    "round": 3,
+    "plan_version": 3,
+    "sender": "Life Support",
+    "recipient": "Commander",
+    "type": "INFO",
+    "content": "ACCEPT return from Engineering: 'Commit 4 Robot units to habitat inspection and seal work'.",
+    "payload": {
+      "commitment_id": "cmt-d5be3028",
+      "accept": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-d55dacb0",
+    "timestamp": 1791542790.2397885,
+    "scenario_id": "INITIAL",
+    "round": 3,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "COMMITMENT",
+    "content": "COMMITMENT: Commander promises Life Support: Give habitat restoration first priority next cycle.",
+    "payload": {
+      "commitment": {
+        "id": "cmt-208964c1",
+        "owner": "Commander",
+        "beneficiary": "Life Support",
+        "return_term": "Give habitat restoration first priority next cycle",
+        "status": "OFFERED",
+        "offered_round": 3,
+        "accepted_round": null,
+        "expiry": "next cycle",
+        "plan_version": 3
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-762eac9d",
+    "timestamp": 1791542790.239799,
+    "scenario_id": "INITIAL",
+    "round": 3,
+    "plan_version": 3,
+    "sender": "Life Support",
+    "recipient": "Commander",
+    "type": "INFO",
+    "content": "ACCEPT return from Commander: 'Give habitat restoration first priority next cycle'.",
+    "payload": {
+      "commitment_id": "cmt-208964c1",
+      "accept": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-e6085b9e",
+    "timestamp": 1791542790.2398148,
+    "scenario_id": "INITIAL",
+    "round": 3,
+    "plan_version": 3,
+    "sender": "Life Support",
+    "recipient": "Commander",
+    "type": "COMMITMENT",
+    "content": "COUNTEROFFER accepted: with 2 accepted returns I will take L3 Sacrifice mode, accepting the living zone closes and the crew endures crowding and thermal limits for 48 hours. Two accepted returns now protect my department: Commit 4 Robot units to habitat inspection and seal work; Give habitat restoration first priority next cycle.",
+    "payload": {
+      "accept_sacrifice": true,
+      "accepted_returns": 2,
+      "mode_id": "L3"
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-1fdf1227",
+    "timestamp": 1791542790.2398686,
+    "scenario_id": "INITIAL",
+    "round": 3,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "INFO",
+    "content": "Deterministic validator on plan v3: PASS. Mode packages: PASS | Resources: PASS | Risk & sacrifice: PASS | Return agreement: PASS | Votes: PASS. ",
+    "payload": {
+      "plan_version": 3,
+      "passed": true,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L3, Medical=M2, Food Production=F2, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": true,
+          "reason": "Within pool (P79 / W50 / O57 / R26 / B17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 24/24, sacrifices 1/1 (Life Support)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "Fair return secured (Life Support<-2 accepted returns)"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ]
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-4c02abd7",
+    "timestamp": 1791542790.2398784,
+    "scenario_id": "INITIAL",
+    "round": 4,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Round 4: voting on plan v3. Any plan change clears earlier votes.",
+    "payload": {
+      "plan_version": 3,
+      "phase": "vote"
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-ce12194e",
+    "timestamp": 1791542790.239901,
+    "scenario_id": "INITIAL",
+    "round": 4,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "VOTE",
+    "content": "Life Support votes ACCEPT on plan v3: two accepted returns compensate my sacrifice",
+    "payload": {
+      "agent": "Life Support",
+      "plan_version": 3,
+      "decision": "ACCEPT",
+      "reason": "two accepted returns compensate my sacrifice",
+      "round": 4,
+      "engine": "fallback"
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-e3972db3",
+    "timestamp": 1791542790.2399175,
+    "scenario_id": "INITIAL",
+    "round": 4,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "VOTE",
+    "content": "Medical votes ACCEPT on plan v3: plan is valid and my mission is protected",
+    "payload": {
+      "agent": "Medical",
+      "plan_version": 3,
+      "decision": "ACCEPT",
+      "reason": "plan is valid and my mission is protected",
+      "round": 4,
+      "engine": "fallback"
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-bf1fee4c",
+    "timestamp": 1791542790.2399304,
+    "scenario_id": "INITIAL",
+    "round": 4,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "VOTE",
+    "content": "Food Production votes ACCEPT on plan v3: plan is valid and my mission is protected",
+    "payload": {
+      "agent": "Food Production",
+      "plan_version": 3,
+      "decision": "ACCEPT",
+      "reason": "plan is valid and my mission is protected",
+      "round": 4,
+      "engine": "fallback"
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-4a676854",
+    "timestamp": 1791542790.2399457,
+    "scenario_id": "INITIAL",
+    "round": 4,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "VOTE",
+    "content": "Engineering votes ACCEPT on plan v3: plan is valid and my mission is protected",
+    "payload": {
+      "agent": "Engineering",
+      "plan_version": 3,
+      "decision": "ACCEPT",
+      "reason": "plan is valid and my mission is protected",
+      "round": 4,
+      "engine": "fallback"
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-0792487e",
+    "timestamp": 1791542790.2399907,
+    "scenario_id": "INITIAL",
+    "round": 4,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "APPROVAL",
+    "content": "APPROVED plan v3. Validator PASS and four ACCEPT votes on the same version. Sacrifice: Life Support, risk 24.",
+    "payload": {
+      "plan_version": 3,
+      "validation": {
+        "passed": true,
+        "plan_version": 3,
+        "checks": [
+          {
+            "name": "Mode packages",
+            "passed": true,
+            "reason": "Exactly one unchanged package per department (Life Support=L3, Medical=M2, Food Production=F2, Engineering=E2)"
+          },
+          {
+            "name": "Resources",
+            "passed": true,
+            "reason": "Within pool (P79 / W50 / O57 / R26 / B17)"
+          },
+          {
+            "name": "Risk & sacrifice",
+            "passed": true,
+            "reason": "risk 24/24, sacrifices 1/1 (Life Support)"
+          },
+          {
+            "name": "Return agreement",
+            "passed": true,
+            "reason": "Fair return secured (Life Support<-2 accepted returns)"
+          },
+          {
+            "name": "Votes",
+            "passed": true,
+            "reason": "All four departments ACCEPT the current plan version v3"
+          }
+        ],
+        "totals": {
+          "power": 79,
+          "water": 50,
+          "oxygen": 57,
+          "robot": 26,
+          "bandwidth": 17
+        },
+        "risk": 24,
+        "sacrifices": [
+          "Life Support"
+        ]
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-70e7e8f6",
+    "timestamp": 1791542790.2400465,
+    "scenario_id": "CRISIS_002",
+    "round": 4,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "EMERGENCY INJECTED [CRISIS_002] Solar Aftershock: Secondary solar flare. Power generation drops by a small margin. Resource deltas: {'power': -4}. Council must reconvene. Crisis Override is now permitted.",
+    "payload": {
+      "event": {
+        "event_id": "CRISIS_002",
+        "event_name": "Solar Aftershock",
+        "description": "Secondary solar flare. Power generation drops by a small margin.",
+        "resource_deltas": {
+          "power": -4
+        },
+        "risk_limit": null,
+        "max_sacrifices": null,
+        "requires_replan": true,
+        "raw": {
+          "event_id": "CRISIS_002",
+          "event_name": "Solar Aftershock",
+          "description": "Secondary solar flare. Power generation drops by a small margin.",
+          "impact": {
+            "power_reduction": 4
+          },
+          "requires_replan": true,
+          "message_to_commander": "ALERT: Solar Aftershock detected. Council must reconvene."
+        },
+        "injected_at_round": 4
+      },
+      "resources": {
+        "power": 75,
+        "water": 52,
+        "oxygen": 59,
+        "robot": 26,
+        "bandwidth": 17
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-c8c22464",
+    "timestamp": 1791542790.240083,
+    "scenario_id": "CRISIS_002",
+    "round": 4,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "OBJECTION",
+    "content": "Plan review: v3 INVALID: Resources: Pool exceeded: power over by 4 (79/75)",
+    "payload": {},
+    "engine": "system"
+  },
+  {
+    "id": "msg-7abf89bb",
+    "timestamp": 1791542790.2400918,
+    "scenario_id": "CRISIS_002",
+    "round": 4,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "INFO",
+    "content": "Commitment review: 2 prior accepted return(s) expired and must be renegotiated for the new crisis.",
+    "payload": {},
+    "engine": "system"
+  },
+  {
+    "id": "msg-42b3e25d",
+    "timestamp": 1791542790.2401018,
+    "scenario_id": "CRISIS_002",
+    "round": 0,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "CRISIS CRISIS_002: Council convened. Resources P:75 / W:52 / O:59 / R:26 / B:17. Risk limit 24, max sacrifice modes 1. Plan version v3. Each department must select one complete mode package; individual resource values are fixed.",
+    "payload": {
+      "resources": {
+        "power": 75,
+        "water": 52,
+        "oxygen": 59,
+        "robot": 26,
+        "bandwidth": 17
+      },
+      "risk_limit": 24,
+      "max_sacrifices": 1
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-919eb6ca",
+    "timestamp": 1791542790.2405696,
+    "scenario_id": "CRISIS_002",
+    "round": 0,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "CRISIS OVERRIDE activated: risk limit raised to 28 and up to 2 Sacrifice modes permitted. Every sacrificing department still requires two accepted returns.",
+    "payload": {},
+    "engine": "system"
+  },
+  {
+    "id": "msg-7259de12",
+    "timestamp": 1791542790.2405756,
+    "scenario_id": "CRISIS_002",
+    "round": 1,
+    "plan_version": 3,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Round 1: every department requests its preferred operating mode.",
+    "payload": {},
+    "engine": "system"
+  },
+  {
+    "id": "msg-95377ae5",
+    "timestamp": 1791542790.240586,
+    "scenario_id": "CRISIS_002",
+    "round": 1,
+    "plan_version": 3,
+    "sender": "Life Support",
+    "recipient": "Commander",
+    "type": "PROPOSAL",
+    "content": "I request L1 Standard mode (L1 Standard: P34/W10/O42/R4/B4, risk 1). My mission is to seal the habitat leak and stabilise the air supply, so I request the full package. My main concern is oxygen continuity and continuous power, and dropping to a lower mode would cost the living zone closes and the crew endures crowding and thermal limits for 48 hours. If forced lower I lose the living zone closes and the crew endures crowding and thermal limits for 48 hours.",
+    "payload": {
+      "mode_id": "L1",
+      "package": [
+        34,
+        10,
+        42,
+        4,
+        4,
+        1
+      ]
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-341eb843",
+    "timestamp": 1791542790.240594,
+    "scenario_id": "CRISIS_002",
+    "round": 1,
+    "plan_version": 3,
+    "sender": "Medical",
+    "recipient": "Commander",
+    "type": "PROPOSAL",
+    "content": "I request M1 Standard mode (M1 Standard: P28/W12/O18/R3/B10, risk 1). My mission is to stabilise and treat the six injured crew members, so I request the full package. My main concern is power, oxygen and bandwidth for life-critical care, and dropping to a lower mode would cost one surgery is delayed and a patient stays unstable. If forced lower I lose one surgery is delayed and a patient stays unstable.",
+    "payload": {
+      "mode_id": "M1",
+      "package": [
+        28,
+        12,
+        18,
+        3,
+        10,
+        1
+      ]
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-4e6c8800",
+    "timestamp": 1791542790.240601,
+    "scenario_id": "CRISIS_002",
+    "round": 1,
+    "plan_version": 3,
+    "sender": "Food Production",
+    "recipient": "Commander",
+    "type": "PROPOSAL",
+    "content": "I request F1 Standard mode (F1 Standard: P24/W34/O8/R4/B2, risk 1). My mission is to protect the crop cycle and the greenhouse cooling loop, so I request the full package. My main concern is water and power for the greenhouse, and dropping to a lower mode would cost a crop bay is abandoned and the food reserve falls by 40 percent. If forced lower I lose a crop bay is abandoned and the food reserve falls by 40 percent.",
+    "payload": {
+      "mode_id": "F1",
+      "package": [
+        24,
+        34,
+        8,
+        4,
+        2,
+        1
+      ]
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-323dc4d6",
+    "timestamp": 1791542790.2406087,
+    "scenario_id": "CRISIS_002",
+    "round": 1,
+    "plan_version": 3,
+    "sender": "Engineering",
+    "recipient": "Commander",
+    "type": "PROPOSAL",
+    "content": "I request E1 Standard mode (E1 Standard: P26/W6/O6/R22/B10, risk 1). My mission is to repair power generation and critical systems, so I request the full package. My main concern is robot time and bandwidth for repairs, and dropping to a lower mode would cost the rover is cannibalised and future repair capacity is reduced. If forced lower I lose the rover is cannibalised and future repair capacity is reduced.",
+    "payload": {
+      "mode_id": "E1",
+      "package": [
+        26,
+        6,
+        6,
+        22,
+        10,
+        1
+      ]
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-a85ce9eb",
+    "timestamp": 1791542790.2406487,
+    "scenario_id": "CRISIS_002",
+    "round": 1,
+    "plan_version": 4,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Draft plan v4: Life Support=L1, Medical=M1, Food Production=F1, Engineering=E1 | P112 / W62 / O74 / R33 / B26 | risk 4 | sacrifice: none. (round 1 proposals)",
+    "payload": {
+      "plan_version": 4,
+      "selections": {
+        "Life Support": "L1",
+        "Medical": "M1",
+        "Food Production": "F1",
+        "Engineering": "E1"
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-1eb22c2f",
+    "timestamp": 1791542790.2406642,
+    "scenario_id": "CRISIS_002",
+    "round": 1,
+    "plan_version": 4,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "OBJECTION",
+    "content": "Deterministic validator on plan v4: FAIL. Mode packages: PASS | Resources: FAIL | Risk & sacrifice: PASS | Return agreement: PASS | Votes: PASS. Resources: Pool exceeded: power over by 37 (112/75), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17)",
+    "payload": {
+      "plan_version": 4,
+      "passed": false,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L1, Medical=M1, Food Production=F1, Engineering=E1)"
+        },
+        {
+          "name": "Resources",
+          "passed": false,
+          "reason": "Pool exceeded: power over by 37 (112/75), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 4/28, sacrifices 0/2 (none)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "No sacrifice mode active; no return required"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ]
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-9e7a64d3",
+    "timestamp": 1791542790.2406693,
+    "scenario_id": "CRISIS_002",
+    "round": 2,
+    "plan_version": 4,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Round 2: the drafted plan is invalid. Departments must object with numbers and declare their maximum concession and sacrifice stance.",
+    "payload": {},
+    "engine": "system"
+  },
+  {
+    "id": "msg-c343b54e",
+    "timestamp": 1791542790.2406814,
+    "scenario_id": "CRISIS_002",
+    "round": 2,
+    "plan_version": 4,
+    "sender": "Life Support",
+    "recipient": "Commander",
+    "type": "COUNTEROFFER",
+    "content": "OBJECTION/COUNTEROFFER: I object: the plan fails because Resources: Pool exceeded: power over by 37 (112/75), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17). I refuse Sacrifice mode while 42 crew breathe through a leaking habitat without a guaranteed return. I can accept L2 Restricted (L2 Restricted: P27/W9/O36/R6/B3, risk 5) as my concession, but I will not take Sacrifice mode.",
+    "payload": {
+      "mode_id": "L2",
+      "refused_sacrifice": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-3cbac340",
+    "timestamp": 1791542790.2406902,
+    "scenario_id": "CRISIS_002",
+    "round": 2,
+    "plan_version": 4,
+    "sender": "Medical",
+    "recipient": "Commander",
+    "type": "COUNTEROFFER",
+    "content": "OBJECTION/COUNTEROFFER: I object: the plan fails because Resources: Pool exceeded: power over by 37 (112/75), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17). I refuse Sacrifice mode; delaying surgery puts a critical patient at risk without compensation. I can accept M2 Restricted (M2 Restricted: P21/W10/O14/R2/B6, risk 5) as my concession, but I will not take Sacrifice mode.",
+    "payload": {
+      "mode_id": "M2",
+      "refused_sacrifice": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-7f3236f5",
+    "timestamp": 1791542790.2406976,
+    "scenario_id": "CRISIS_002",
+    "round": 2,
+    "plan_version": 4,
+    "sender": "Food Production",
+    "recipient": "Commander",
+    "type": "COUNTEROFFER",
+    "content": "OBJECTION/COUNTEROFFER: I object: the plan fails because Resources: Pool exceeded: power over by 37 (112/75), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17). I refuse Sacrifice mode; abandoning a crop bay endangers the colony's long-term food supply. I can accept F2 Restricted (F2 Restricted: P15/W27/O5/R4/B2, risk 5) as my concession, but I will not take Sacrifice mode.",
+    "payload": {
+      "mode_id": "F2",
+      "refused_sacrifice": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-5a2007dd",
+    "timestamp": 1791542790.2407043,
+    "scenario_id": "CRISIS_002",
+    "round": 2,
+    "plan_version": 4,
+    "sender": "Engineering",
+    "recipient": "Commander",
+    "type": "COUNTEROFFER",
+    "content": "OBJECTION/COUNTEROFFER: I object: the plan fails because Resources: Pool exceeded: power over by 37 (112/75), water over by 10 (62/52), oxygen over by 15 (74/59), robot over by 7 (33/26), bandwidth over by 9 (26/17). I refuse Sacrifice mode; without the rover we cannot repair the solar field in time. I can accept E2 Restricted (E2 Restricted: P20/W5/O5/R18/B7, risk 5) as my concession, but I will not take Sacrifice mode.",
+    "payload": {
+      "mode_id": "E2",
+      "refused_sacrifice": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-746e7254",
+    "timestamp": 1791542790.2407398,
+    "scenario_id": "CRISIS_002",
+    "round": 2,
+    "plan_version": 5,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Draft plan v5: Life Support=L2, Medical=M2, Food Production=F2, Engineering=E2 | P83 / W51 / O60 / R30 / B18 | risk 20 | sacrifice: none. (round 2 concessions)",
+    "payload": {
+      "plan_version": 5,
+      "selections": {
+        "Life Support": "L2",
+        "Medical": "M2",
+        "Food Production": "F2",
+        "Engineering": "E2"
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-93db2739",
+    "timestamp": 1791542790.240751,
+    "scenario_id": "CRISIS_002",
+    "round": 2,
+    "plan_version": 5,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "OBJECTION",
+    "content": "Deterministic validator on plan v5: FAIL. Mode packages: PASS | Resources: FAIL | Risk & sacrifice: PASS | Return agreement: PASS | Votes: PASS. Resources: Pool exceeded: power over by 8 (83/75), oxygen over by 1 (60/59), robot over by 4 (30/26), bandwidth over by 1 (18/17)",
+    "payload": {
+      "plan_version": 5,
+      "passed": false,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L2, Medical=M2, Food Production=F2, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": false,
+          "reason": "Pool exceeded: power over by 8 (83/75), oxygen over by 1 (60/59), robot over by 4 (30/26), bandwidth over by 1 (18/17)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 20/28, sacrifices 0/2 (none)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "No sacrifice mode active; no return required"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ]
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-014908a4",
+    "timestamp": 1791542790.240762,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 5,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Round 3: the Commander adopts the deterministically feasible candidate and opens return negotiations. Candidate: Life Support=L3, Medical=M2, Food Production=F3, Engineering=E2 | P74 / W47 / O57 / R24 / B16 | risk 28 | sacrifice: Life Support, Food Production",
+    "payload": {
+      "candidate": {
+        "selections": {
+          "Life Support": "L3",
+          "Medical": "M2",
+          "Food Production": "F3",
+          "Engineering": "E2"
+        },
+        "totals": {
+          "power": 74,
+          "water": 47,
+          "oxygen": 57,
+          "robot": 24,
+          "bandwidth": 16
+        },
+        "risk": 28,
+        "sacrifices": [
+          "Life Support",
+          "Food Production"
+        ]
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-a49af32f",
+    "timestamp": 1791542790.2407978,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Draft plan v6: Life Support=L3, Medical=M2, Food Production=F3, Engineering=E2 | P74 / W47 / O57 / R24 / B16 | risk 28 | sacrifice: Life Support, Food Production. (round 3 feasible candidate)",
+    "payload": {
+      "plan_version": 6,
+      "selections": {
+        "Life Support": "L3",
+        "Medical": "M2",
+        "Food Production": "F3",
+        "Engineering": "E2"
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-bb7faa05",
+    "timestamp": 1791542790.2408092,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "OBJECTION",
+    "content": "Deterministic validator on plan v6: FAIL. Mode packages: PASS | Resources: PASS | Risk & sacrifice: PASS | Return agreement: FAIL | Votes: PASS. Return agreement: Life Support has 0 accepted commitment(s) from different agents; needs 2; Food Production has 0 accepted commitment(s) from different agents; needs 2",
+    "payload": {
+      "plan_version": 6,
+      "passed": false,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L3, Medical=M2, Food Production=F3, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": true,
+          "reason": "Within pool (P74 / W47 / O57 / R24 / B16)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 28/28, sacrifices 2/2 (Life Support, Food Production)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": false,
+          "reason": "Life Support has 0 accepted commitment(s) from different agents; needs 2; Food Production has 0 accepted commitment(s) from different agents; needs 2"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ]
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-3fe6c9e8",
+    "timestamp": 1791542790.2408345,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Engineering",
+    "recipient": "Commander",
+    "type": "COMMITMENT",
+    "content": "COMMITMENT: I promise Life Support: Commit 4 Robot units to habitat inspection and seal work.",
+    "payload": {
+      "commitment": {
+        "id": "cmt-af470871",
+        "owner": "Engineering",
+        "beneficiary": "Life Support",
+        "return_term": "Commit 4 Robot units to habitat inspection and seal work",
+        "status": "OFFERED",
+        "offered_round": 3,
+        "accepted_round": null,
+        "expiry": "next cycle",
+        "plan_version": 6
+      }
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-3bd50b60",
+    "timestamp": 1791542790.2408442,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Life Support",
+    "recipient": "Commander",
+    "type": "INFO",
+    "content": "ACCEPT return from Engineering: 'Commit 4 Robot units to habitat inspection and seal work'.",
+    "payload": {
+      "commitment_id": "cmt-af470871",
+      "accept": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-324c5251",
+    "timestamp": 1791542790.2408571,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "COMMITMENT",
+    "content": "COMMITMENT: Commander promises Life Support: Give habitat restoration first priority next cycle.",
+    "payload": {
+      "commitment": {
+        "id": "cmt-fa3ebf3a",
+        "owner": "Commander",
+        "beneficiary": "Life Support",
+        "return_term": "Give habitat restoration first priority next cycle",
+        "status": "OFFERED",
+        "offered_round": 3,
+        "accepted_round": null,
+        "expiry": "next cycle",
+        "plan_version": 6
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-9f99dde3",
+    "timestamp": 1791542790.240865,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Life Support",
+    "recipient": "Commander",
+    "type": "INFO",
+    "content": "ACCEPT return from Commander: 'Give habitat restoration first priority next cycle'.",
+    "payload": {
+      "commitment_id": "cmt-fa3ebf3a",
+      "accept": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-192124d9",
+    "timestamp": 1791542790.240881,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Life Support",
+    "recipient": "Commander",
+    "type": "COMMITMENT",
+    "content": "COUNTEROFFER accepted: with 2 accepted returns I will take L3 Sacrifice mode, accepting the living zone closes and the crew endures crowding and thermal limits for 48 hours. Two accepted returns now protect my department: Commit 4 Robot units to habitat inspection and seal work; Give habitat restoration first priority next cycle.",
+    "payload": {
+      "accept_sacrifice": true,
+      "accepted_returns": 2,
+      "mode_id": "L3"
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-4dfc3a27",
+    "timestamp": 1791542790.2409039,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Engineering",
+    "recipient": "Commander",
+    "type": "COMMITMENT",
+    "content": "COMMITMENT: I promise Food Production: Commit 4 future Robot units to greenhouse rebuild.",
+    "payload": {
+      "commitment": {
+        "id": "cmt-ff359af3",
+        "owner": "Engineering",
+        "beneficiary": "Food Production",
+        "return_term": "Commit 4 future Robot units to greenhouse rebuild",
+        "status": "OFFERED",
+        "offered_round": 3,
+        "accepted_round": null,
+        "expiry": "next cycle",
+        "plan_version": 6
+      }
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-dfe072b2",
+    "timestamp": 1791542790.2409127,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Food Production",
+    "recipient": "Commander",
+    "type": "INFO",
+    "content": "ACCEPT return from Engineering: 'Commit 4 future Robot units to greenhouse rebuild'.",
+    "payload": {
+      "commitment_id": "cmt-ff359af3",
+      "accept": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-214792dc",
+    "timestamp": 1791542790.2409227,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "COMMITMENT",
+    "content": "COMMITMENT: Commander promises Food Production: Protect the next Water increase for Food Production.",
+    "payload": {
+      "commitment": {
+        "id": "cmt-643c078a",
+        "owner": "Commander",
+        "beneficiary": "Food Production",
+        "return_term": "Protect the next Water increase for Food Production",
+        "status": "OFFERED",
+        "offered_round": 3,
+        "accepted_round": null,
+        "expiry": "next cycle",
+        "plan_version": 6
+      }
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-7f69e288",
+    "timestamp": 1791542790.2409296,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Food Production",
+    "recipient": "Commander",
+    "type": "INFO",
+    "content": "ACCEPT return from Commander: 'Protect the next Water increase for Food Production'.",
+    "payload": {
+      "commitment_id": "cmt-643c078a",
+      "accept": true
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-aedecd30",
+    "timestamp": 1791542790.2409396,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Food Production",
+    "recipient": "Commander",
+    "type": "COMMITMENT",
+    "content": "COUNTEROFFER accepted: with 2 accepted returns I will take F3 Sacrifice mode, accepting a crop bay is abandoned and the food reserve falls by 40 percent. Two accepted returns now protect my department: Commit 4 future Robot units to greenhouse rebuild; Protect the next Water increase for Food Production.",
+    "payload": {
+      "accept_sacrifice": true,
+      "accepted_returns": 2,
+      "mode_id": "F3"
+    },
+    "engine": "fallback"
+  },
+  {
+    "id": "msg-8feed6be",
+    "timestamp": 1791542790.240982,
+    "scenario_id": "CRISIS_002",
+    "round": 3,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "INFO",
+    "content": "Deterministic validator on plan v6: PASS. Mode packages: PASS | Resources: PASS | Risk & sacrifice: PASS | Return agreement: PASS | Votes: PASS. ",
+    "payload": {
+      "plan_version": 6,
+      "passed": true,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L3, Medical=M2, Food Production=F3, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": true,
+          "reason": "Within pool (P74 / W47 / O57 / R24 / B16)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 28/28, sacrifices 2/2 (Life Support, Food Production)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "Fair return secured (Life Support<-2 accepted returns, Food Production<-2 accepted returns)"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "Pending: council has not voted yet"
+        }
+      ]
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-932111bb",
+    "timestamp": 1791542790.2409916,
+    "scenario_id": "CRISIS_002",
+    "round": 4,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "STATE",
+    "content": "Round 4: voting on plan v6. Any plan change clears earlier votes.",
+    "payload": {
+      "plan_version": 6,
+      "phase": "vote"
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-2bc136ac",
+    "timestamp": 1791542790.2410104,
+    "scenario_id": "CRISIS_002",
+    "round": 4,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "VOTE",
+    "content": "Life Support votes ACCEPT on plan v6: two accepted returns compensate my sacrifice",
+    "payload": {
+      "agent": "Life Support",
+      "plan_version": 6,
+      "decision": "ACCEPT",
+      "reason": "two accepted returns compensate my sacrifice",
+      "round": 4,
+      "engine": "fallback"
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-cf65f4e9",
+    "timestamp": 1791542790.2410228,
+    "scenario_id": "CRISIS_002",
+    "round": 4,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "VOTE",
+    "content": "Medical votes ACCEPT on plan v6: plan is valid and my mission is protected",
+    "payload": {
+      "agent": "Medical",
+      "plan_version": 6,
+      "decision": "ACCEPT",
+      "reason": "plan is valid and my mission is protected",
+      "round": 4,
+      "engine": "fallback"
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-3ae61e41",
+    "timestamp": 1791542790.2410345,
+    "scenario_id": "CRISIS_002",
+    "round": 4,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "VOTE",
+    "content": "Food Production votes ACCEPT on plan v6: two accepted returns compensate my sacrifice",
+    "payload": {
+      "agent": "Food Production",
+      "plan_version": 6,
+      "decision": "ACCEPT",
+      "reason": "two accepted returns compensate my sacrifice",
+      "round": 4,
+      "engine": "fallback"
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-24c6ab83",
+    "timestamp": 1791542790.2410448,
+    "scenario_id": "CRISIS_002",
+    "round": 4,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "VOTE",
+    "content": "Engineering votes ACCEPT on plan v6: plan is valid and my mission is protected",
+    "payload": {
+      "agent": "Engineering",
+      "plan_version": 6,
+      "decision": "ACCEPT",
+      "reason": "plan is valid and my mission is protected",
+      "round": 4,
+      "engine": "fallback"
+    },
+    "engine": "system"
+  },
+  {
+    "id": "msg-37ff0a69",
+    "timestamp": 1791542790.2410905,
+    "scenario_id": "CRISIS_002",
+    "round": 4,
+    "plan_version": 6,
+    "sender": "Commander",
+    "recipient": null,
+    "type": "APPROVAL",
+    "content": "APPROVED plan v6. Validator PASS and four ACCEPT votes on the same version. Sacrifice: Life Support, Food Production, risk 28.",
+    "payload": {
+      "plan_version": 6,
+      "validation": {
+        "passed": true,
+        "plan_version": 6,
+        "checks": [
+          {
+            "name": "Mode packages",
+            "passed": true,
+            "reason": "Exactly one unchanged package per department (Life Support=L3, Medical=M2, Food Production=F3, Engineering=E2)"
+          },
+          {
+            "name": "Resources",
+            "passed": true,
+            "reason": "Within pool (P74 / W47 / O57 / R24 / B16)"
+          },
+          {
+            "name": "Risk & sacrifice",
+            "passed": true,
+            "reason": "risk 28/28, sacrifices 2/2 (Life Support, Food Production)"
+          },
+          {
+            "name": "Return agreement",
+            "passed": true,
+            "reason": "Fair return secured (Life Support<-2 accepted returns, Food Production<-2 accepted returns)"
+          },
+          {
+            "name": "Votes",
+            "passed": true,
+            "reason": "All four departments ACCEPT the current plan version v6"
+          }
+        ],
+        "totals": {
+          "power": 74,
+          "water": 47,
+          "oxygen": 57,
+          "robot": 24,
+          "bandwidth": 16
+        },
+        "risk": 28,
+        "sacrifices": [
+          "Life Support",
+          "Food Production"
+        ]
+      }
+    },
+    "engine": "system"
+  }
+]

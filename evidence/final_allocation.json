@@ -1,0 +1,192 @@
+{
+  "allocation": {
+    "scenario_id": "CRISIS_002",
+    "plan_version": 6,
+    "status": "APPROVED",
+    "selections": {
+      "Life Support": "L3",
+      "Medical": "M2",
+      "Food Production": "F3",
+      "Engineering": "E2"
+    },
+    "departments": [
+      {
+        "department": "Life Support",
+        "mode_id": "L3",
+        "kind": "Sacrifice",
+        "power": 23,
+        "water": 8,
+        "oxygen": 33,
+        "robot_time": 2,
+        "bandwidth": 2,
+        "risk": 9
+      },
+      {
+        "department": "Medical",
+        "mode_id": "M2",
+        "kind": "Restricted",
+        "power": 21,
+        "water": 10,
+        "oxygen": 14,
+        "robot_time": 2,
+        "bandwidth": 6,
+        "risk": 5
+      },
+      {
+        "department": "Food Production",
+        "mode_id": "F3",
+        "kind": "Sacrifice",
+        "power": 10,
+        "water": 24,
+        "oxygen": 5,
+        "robot_time": 2,
+        "bandwidth": 1,
+        "risk": 9
+      },
+      {
+        "department": "Engineering",
+        "mode_id": "E2",
+        "kind": "Restricted",
+        "power": 20,
+        "water": 5,
+        "oxygen": 5,
+        "robot_time": 18,
+        "bandwidth": 7,
+        "risk": 5
+      }
+    ],
+    "totals": {
+      "power": 74,
+      "water": 47,
+      "oxygen": 57,
+      "robot": 24,
+      "bandwidth": 16
+    },
+    "risk": 28,
+    "sacrifices": [
+      "Life Support",
+      "Food Production"
+    ],
+    "available_resources": {
+      "power": 75,
+      "water": 52,
+      "oxygen": 59,
+      "robot": 26,
+      "bandwidth": 17
+    },
+    "reserve": {
+      "power": 1,
+      "water": 5,
+      "oxygen": 2,
+      "robot": 2,
+      "bandwidth": 1
+    },
+    "commitments": [
+      {
+        "id": "cmt-af470871",
+        "owner": "Engineering",
+        "beneficiary": "Life Support",
+        "return_term": "Commit 4 Robot units to habitat inspection and seal work",
+        "status": "ACCEPTED",
+        "offered_round": 3,
+        "accepted_round": 3,
+        "expiry": "next cycle",
+        "plan_version": 6
+      },
+      {
+        "id": "cmt-fa3ebf3a",
+        "owner": "Commander",
+        "beneficiary": "Life Support",
+        "return_term": "Give habitat restoration first priority next cycle",
+        "status": "ACCEPTED",
+        "offered_round": 3,
+        "accepted_round": 3,
+        "expiry": "next cycle",
+        "plan_version": 6
+      },
+      {
+        "id": "cmt-ff359af3",
+        "owner": "Engineering",
+        "beneficiary": "Food Production",
+        "return_term": "Commit 4 future Robot units to greenhouse rebuild",
+        "status": "ACCEPTED",
+        "offered_round": 3,
+        "accepted_round": 3,
+        "expiry": "next cycle",
+        "plan_version": 6
+      },
+      {
+        "id": "cmt-643c078a",
+        "owner": "Commander",
+        "beneficiary": "Food Production",
+        "return_term": "Protect the next Water increase for Food Production",
+        "status": "ACCEPTED",
+        "offered_round": 3,
+        "accepted_round": 3,
+        "expiry": "next cycle",
+        "plan_version": 6
+      }
+    ],
+    "validation": {
+      "passed": true,
+      "plan_version": 6,
+      "checks": [
+        {
+          "name": "Mode packages",
+          "passed": true,
+          "reason": "Exactly one unchanged package per department (Life Support=L3, Medical=M2, Food Production=F3, Engineering=E2)"
+        },
+        {
+          "name": "Resources",
+          "passed": true,
+          "reason": "Within pool (P74 / W47 / O57 / R24 / B16)"
+        },
+        {
+          "name": "Risk & sacrifice",
+          "passed": true,
+          "reason": "risk 28/28, sacrifices 2/2 (Life Support, Food Production)"
+        },
+        {
+          "name": "Return agreement",
+          "passed": true,
+          "reason": "Fair return secured (Life Support<-2 accepted returns, Food Production<-2 accepted returns)"
+        },
+        {
+          "name": "Votes",
+          "passed": true,
+          "reason": "All four departments ACCEPT the current plan version v6"
+        }
+      ],
+      "totals": {
+        "power": 74,
+        "water": 47,
+        "oxygen": 57,
+        "robot": 24,
+        "bandwidth": 16
+      },
+      "risk": 28,
+      "sacrifices": [
+        "Life Support",
+        "Food Production"
+      ]
+    },
+    "override_active": true,
+    "risk_limit": 28,
+    "max_sacrifices": 2
+  },
+  "output_schema": {
+    "round": 4,
+    "agent_id": "COMMANDER",
+    "proposal": {
+      "power_kwh": 74,
+      "water_liters": 47,
+      "oxygen_units": 57,
+      "robot_time": 24,
+      "bandwidth": 16,
+      "justification": "Validated council allocation for CRISIS_002"
+    },
+    "vote": "APPROVE",
+    "risk_score": 28,
+    "flag_human_review": true
+  }
+}

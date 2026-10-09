@@ -1,0 +1,29 @@
+ARES ACCORD - CRISIS HANDLING LOG
+========================================
+
+Entry 1: CRISIS_002 (Solar Aftershock)
+  Description: Secondary solar flare. Power generation drops by a small margin.
+  Commander alert: ALERT: Solar Aftershock detected. Council must reconvene.
+  Resource changes: power -4
+  Injected at round: 4
+
+  Pre-event resources:
+    power: 79
+    water: 52
+    oxygen: 59
+    robot: 26
+    bandwidth: 17
+  Post-event resources:
+    power: 75
+    water: 52
+    oxygen: 59
+    robot: 26
+    bandwidth: 17
+
+  Stale/invalid plan note: v3 INVALID: Resources: Pool exceeded: power over by 4 (79/75)
+  Expired commitments: 2
+
+  Outcome: APPROVED - Council reached unanimous agreement on a validated plan.
+  Negotiation rounds used: 4
+  Final plan version: 6
+  Timestamp: 2026-10-09T15:46:30.241108

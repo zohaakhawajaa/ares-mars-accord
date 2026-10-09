@@ -1,0 +1,47 @@
+[
+  {
+    "event": {
+      "event_id": "CRISIS_002",
+      "event_name": "Solar Aftershock",
+      "description": "Secondary solar flare. Power generation drops by a small margin.",
+      "resource_deltas": {
+        "power": -4
+      },
+      "risk_limit": null,
+      "max_sacrifices": null,
+      "requires_replan": true,
+      "raw": {
+        "event_id": "CRISIS_002",
+        "event_name": "Solar Aftershock",
+        "description": "Secondary solar flare. Power generation drops by a small margin.",
+        "impact": {
+          "power_reduction": 4
+        },
+        "requires_replan": true,
+        "message_to_commander": "ALERT: Solar Aftershock detected. Council must reconvene."
+      },
+      "injected_at_round": 4
+    },
+    "pre_event_resources": {
+      "power": 79,
+      "water": 52,
+      "oxygen": 59,
+      "robot": 26,
+      "bandwidth": 17
+    },
+    "post_event_resources": {
+      "power": 75,
+      "water": 52,
+      "oxygen": 59,
+      "robot": 26,
+      "bandwidth": 17
+    },
+    "stale_note": "v3 INVALID: Resources: Pool exceeded: power over by 4 (79/75)",
+    "expired_commitments": 2,
+    "outcome_status": "APPROVED",
+    "outcome_detail": "Council reached unanimous agreement on a validated plan.",
+    "rounds_used": 4,
+    "new_plan_version": 6,
+    "timestamp": 1791542790.241108
+  }
+]

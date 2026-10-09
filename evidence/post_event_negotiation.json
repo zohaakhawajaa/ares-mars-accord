@@ -1,0 +1,31 @@
+{
+  "status": "APPROVED",
+  "rounds": 4,
+  "process": {
+    "rounds_used": 4,
+    "at_least_three_rounds": true,
+    "rejected_or_revised_proposal": true,
+    "sacrifice_refused_by_an_agent": true,
+    "accepted_returns_per_sacrifice": {
+      "Life Support": 2,
+      "Food Production": 2
+    },
+    "override_active": true,
+    "plan_versions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "meaningful_revisions": 0,
+    "reconsiderations": 0,
+    "rejections_logged": 0,
+    "human_review_required": false,
+    "human_decision": null,
+    "pending_human_version": null
+  },
+  "override_active": true,
+  "plan_version": 6
+}
